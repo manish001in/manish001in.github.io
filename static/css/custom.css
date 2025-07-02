@@ -1,0 +1,60 @@
+/* Custom CSS - About page specific header hierarchy fix */
+
+/* H2 underline styling for blog posts only */
+body.terminal .blog-post h2 {
+    text-decoration: underline !important;
+}
+
+/* Target only the about page using the custom about-page class */
+
+.about-page h2 {
+    font-size: 1.8em !important;
+    font-weight: 600 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.about-page h3 {
+    font-size: 1.4em !important;
+    font-weight: 600 !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.8rem !important;
+}
+
+.about-page h4 {
+    font-size: 1.2em !important;
+    font-weight: 600 !important;
+    margin-top: 1.2rem !important;
+    margin-bottom: 0.6rem !important;
+}
+
+.about-page h5 {
+    font-size: 1.1em !important;
+    font-weight: 600 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.about-page h6 {
+    font-size: 1em !important;
+    font-weight: 600 !important;
+    margin-top: 0.8rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* About page spacing and typography */
+.about-page h2 + p,
+.about-page h3 + p {
+    margin-top: 0.5rem !important;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page h4,
+.about-page h5,
+.about-page h6 {
+    font-family: var(--font-stack) !important;
+    clear: both !important;
+    color: var(--font-color) !important;
+} 

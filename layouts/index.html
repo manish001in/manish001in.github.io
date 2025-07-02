@@ -1,0 +1,155 @@
+{{ define "main" }}
+
+<h1>About</h1>
+
+<p>
+Hi, I'm <strong>Manish</strong>. I am a software dev, a self proclaimed nerd and a curious cat. I have developed software for more than <strong>9 years</strong> and I have primarily worked in startups during my career.
+</p>
+
+<p>
+My career is full of chasing interesting ideas with outsized impact and I love to work in small teams where I can truly contribute and own products.
+</p>
+
+<p>
+Currently seeking my <strong>next exciting opportunity</strong>. I'm language agnostic and handle full-stack development, DevOps, AI applications, mentoring, and product collaboration. I am deeply interested in exploring the inner workings of <strong>AI/ML</strong>.
+</p>
+
+<p>
+I am also working on an <strong>AI scheduler</strong> targeted towards executives to enable them to have meaningful regular conversations with their team.
+</p>
+
+<p><strong>Some things that excite me:</strong></p>
+<ol>
+<li>Technical Problems that end up making you pull all nighters debugging and searching for solutions.</li>
+<li>Warhammer, LOTR, Star Wars, Legos, Board Games (told you, I was a nerd)</li>
+<li>Coffee (the developer coffee cliche still stands)</li>
+<li>Geopolitics, History, Science and Technology</li>
+<li>Productivity. (I tried building my startup <strong>Twing</strong> in it)</li>
+</ol>
+
+<p><a href="about/">(read more)</a></p>
+
+<br/>
+
+<h1>Projects</h1>
+
+<style>
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-card {
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 4px;
+    background: #0a0a0a;
+}
+
+.project-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #fff;
+}
+
+.project-card p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.project-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    padding: 0.5rem 1rem;
+    border: 1px solid #666;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.project-links a:hover {
+    background: #333;
+}
+
+.video-placeholder {
+    background: #1a1a1a;
+    border: 1px dashed #666;
+    padding: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: #888;
+    font-size: 0.8rem;
+}
+</style>
+
+<div class="projects-grid">
+{{ with .Site.GetPage "/projects" }}
+    {{ range first 4 (sort .Data.Pages "Params.rank" "asc")}}
+        <div class="project-card">
+            <h3><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h3>
+            <p>{{ .Params.description | default .Summary | truncate 120 }}</p>
+            
+            {{ if eq .Title "TwingBot - AI-Powered Task Management" }}
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 1rem 0;">
+              <iframe 
+                src="https://www.youtube.com/embed/yskK8KxE_Sk" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            {{ else if eq .Title "Legaling - AI Legal Research Platform" }}
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 1rem 0;">
+              <iframe 
+                src="https://www.youtube.com/embed/xZsAQvh0jXI" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            {{ end }}
+            
+            <div class="project-links">
+                {{ if .Params.demo_url }}
+                <a href="{{ .Params.demo_url }}" target="_blank">🌐 Live Demo</a>
+                {{ end }}
+                <a href="{{ .Permalink }}">📖 Learn More</a>
+            </div>
+        </div>    
+    {{ end }}
+{{ end }}
+</div>
+
+<p><a href="projects/">(view all projects)</a></p>
+
+<br/>
+
+<h1>Latest posts</h1>
+
+<div class="posts-list">
+{{ with .Site.GetPage "/posts" }}
+    {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+        <div class="post">
+            <p>
+                <div class="date">{{ .Date | time.Format ":date_medium" }}</div>
+                <h2><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
+                {{ .Summary }}
+            </p>
+        </div>    
+    {{ end }}
+{{ end }}
+</div>
+
+<p><a href="posts/">(view all posts)</a></p>
+
+{{ end }} 

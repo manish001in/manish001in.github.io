@@ -1,0 +1,42 @@
+baseurl = "https://manish001in.github.io/"
+title = "/manish"
+theme = "hugo-theme-console"
+languageCode = "en-us"
+summaryLength = 100
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  # Cutting off the page title to two chars for mobile
+  titleCutting = true
+
+  # Set the animation style -- https://animate.style/
+  # To disable animations, please remove or comment animationStyle parameter
+  animateStyle = "animated zoomIn fast" 
+
+  [[params.navlinks]]
+  name = "home/"
+  url = "/"
+
+  [[params.navlinks]]
+  name = "about/"
+  url = "about/"
+
+  [[params.navlinks]]
+  name = "projects/"
+  url = "projects/"
+
+  [[params.navlinks]]
+  name = "posts/"
+  url = "posts/"
+  
+  [[params.navlinks]]
+  name = "resume/"
+  url = "resume/"
+
+  [[params.navlinks]]
+  name = "contact/"
+  url = "contact/"
