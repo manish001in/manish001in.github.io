@@ -57,4 +57,35 @@ body.terminal .blog-post h2 {
     font-family: var(--font-stack) !important;
     clear: both !important;
     color: var(--font-color) !important;
+}
+
+/* Custom styling for lite-youtube web components */
+lite-youtube {
+    display: block;
+    margin: 1rem 0;
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+lite-youtube:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the component maintains aspect ratio */
+lite-youtube {
+    --lite-youtube-aspect-ratio: 16 / 9;
+}
+
+/* Style the play button for better contrast */
+lite-youtube::part(playButton) {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+lite-youtube:hover::part(playButton) {
+    background-color: rgba(255, 0, 0, 0.9);
 } 

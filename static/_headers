@@ -1,0 +1,41 @@
+# Cache headers for GitHub Pages
+# Static assets with long cache lifetimes
+
+# CSS files - cache for 1 year with fingerprinting
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# JavaScript files - cache for 1 year
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Font files - cache for 1 year
+/hugo-theme-console/font/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - cache for 1 year
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# PDF files - cache for 1 month
+/files/*.pdf
+  Cache-Control: public, max-age=2592000
+
+# Theme CSS files - cache for 1 year
+/hugo-theme-console/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML files - cache for 1 hour
+/*.html
+  Cache-Control: public, max-age=3600
+
+# Root HTML files
+/
+  Cache-Control: public, max-age=3600
+
+# Security headers
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin 

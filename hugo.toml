@@ -4,6 +4,41 @@ theme = "hugo-theme-console"
 languageCode = "en-us"
 summaryLength = 100
 
+# Asset processing and optimization
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+
+# Minification settings
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.css]
+      keepCSS2 = true
+      precision = 0
+    [minify.tdewolff.html]
+      keepComments = false
+      keepConditionalComments = true
+      keepDefaultAttrVals = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = false
+      keepWhitespace = false
+    [minify.tdewolff.js]
+      keepVarNames = false
+      precision = 0
+
+# Asset processing settings
+[params.assets]
+  fingerprint = true
+  minify = true
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -15,7 +50,7 @@ summaryLength = 100
 
   # Set the animation style -- https://animate.style/
   # To disable animations, please remove or comment animationStyle parameter
-  animateStyle = "animated zoomIn fast" 
+  animateStyle = "animated zoomIn fast"
 
   [[params.navlinks]]
   name = "home/"
