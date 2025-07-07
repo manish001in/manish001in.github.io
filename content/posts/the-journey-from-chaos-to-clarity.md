@@ -60,7 +60,7 @@ Each of these roles taught me something new, have patience, put in the work, loo
 
 At a certain point, I was FED UP! I was growing in my technical skills but I was not happy, not satisfied. Not growing fast enough! I felt I was not at the cutting edge of technology. Not building the most innovative products.
 
-After years of jumping between companies, something clicked. I realized that a lot of my frustration wasn't with the technical problems - those were fun. It was with with: the endless meetings about meetings, the constant context switching, too much premature discussions, not being able to do the work that you actually enjoy doing.
+After years of jumping between companies, something clicked. I realized that a lot of my frustration wasn't with the technical problems - those were fun. It was with: the endless meetings about meetings, the constant context switching, too much premature discussions, not being able to do the work that you actually enjoy doing.
 
 We were drowning in "work about work."
 I honestly never thought I would be a founder. I was just looking for a team that I could be a part of. A solution that I could be proud of.
@@ -75,11 +75,11 @@ The journey led me to build:
 
 ## The Startup Reality Check
 
-Building Twing gave me something that I never expected. It gave me the confidence to be able to build anything I could ever want to build. No problem was scary enough. No idea was too big. When you're responsible for everything - from the database architecture to the deployment pipeline to the user experience to talking to user to getting feedback - it's overwhelming but you learn quick.
+Building Twing gave me something that I never expected. It gave me the confidence to be able to build anything I could ever want to build. No problem was scary enough. No idea was too big. When you're responsible for everything - from the database architecture to the deployment pipeline to the user experience to talking to user and getting feedback - it's overwhelming but you learn quick.
 
 But startups are hard. While the technology worked and users loved the products, the business side proved more challenging than I anticipated. The startup didn't work out, but the learning was invaluable. I built products that real people used, got honest feedback from actual users, and worked with some incredibly smart people who challenged my assumptions daily.
 
-I learn so much about myself. The biggest of them all, Patience! I was in a hurry all my career. I didn't stop and reflect on what was actually missing. Some guidance? Some stability? The right people around me? 
+I learnt so much about myself. The biggest of them all, Patience! I was in a hurry all my career. I didn't stop and reflect on what was actually missing. Some guidance? Some stability? The right people around me?
 
 Yes to all of the above!
 
@@ -89,8 +89,7 @@ Now, as I re-enter the job market, my priorities have completely shifted.
 
 **I'm looking for the right teams.**
 
-I am looking for people who will help me grow into a better developer. I am still looking for people solving the hardest of problems though!
-I want to work with people who are truly passionate about what they're building. I want to be part of a team's success, not just solve isolated technical problems. I want to contribute to a product, a company, and a culture that I believe in.
+I am looking for people who will help me grow into a better developer. I am still looking for people solving the hardest of problems but I want to work with people who are truly passionate about what they're building. I want to be part of a team's success, not just solve isolated technical problems. I want to contribute to a product, a company, and a culture that I believe in.
 
 The questions I ask now are different:
 - Does this team actually care about the problem they're solving?
