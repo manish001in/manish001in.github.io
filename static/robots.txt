@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://manish001in.github.io/sitemap.xml
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all other content
+Allow: /posts/
+Allow: /projects/
+Allow: /about/
+Allow: /contact/
+Allow: /resume/
+
+# Crawl delay (optional - helps prevent overwhelming your server)
+Crawl-delay: 1 
