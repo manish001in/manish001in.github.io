@@ -1,10 +1,11 @@
 +++
-date = "2025-06-25"
+date = "2026-10-27"
 +++
 
 # Manish Rastogi - Resume
 
-**Software Engineer**  
+**Senior Software Engineer — Backend & AI Systems**  
+📍 Bengaluru, India  
 📧 [manish.rastogi94@gmail.com](mailto:manish.rastogi94@gmail.com)  
 [GitHub](https://github.com/manish001in) | [LinkedIn](https://www.linkedin.com/in/manish--rastogi)
 
@@ -14,115 +15,124 @@ date = "2025-06-25"
 
 ## 🧠 Professional Summary
 
-Accomplished Senior/Staff Backend Engineer with **9+ years** of experience architecting, developing, and scaling high-performance distributed systems and AI-powered platforms. Proven ability to lead projects from conception to deployment, leveraging expertise in **Python, LLMs, microservices, cloud computing (AWS/Azure)**, and various data stores. Adept at optimizing system performance, reducing costs, and delivering robust, scalable solutions both independently and as a team leader.
+Backend and AI engineer with **10+ years** of experience building systems end to end — from low-latency trading platforms to **LLM agents in production**. Most recently built the provider-agnostic tool-calling architecture and the full integration layer for an AI assistant, plus the evals that measured whether the agents actually worked. Comfortable owning a problem from architecture through on-call, have led teams of up to ~10, and spent two years founding my own product — so I bias toward shipping and cost, not just design docs.
 
 ---
 
 ## 💼 Experience
 
+### 🐦 **Senior Software Engineer – Studio Management (Littlebird)**
+*August 2025 – July 2026 · Bengaluru*
+
+Littlebird is an AI executive assistant (grew from 250 to 5,000 users). Also built Songbird, a music-recommendation product.
+
+- Rebuilt the agent's core tool-calling loop into a **provider-agnostic plugin system** (OpenAI Responses + Gemini) with per-turn tool management — the pattern other engineers then built their own agents on.
+- Owned the **integrations layer** end to end, backend through UI: Composio and OAuth with per-tool routing on the backend, plus the toggle wired across the client SDK, stores, and UI — connecting 8 platforms (Gmail, Drive, Docs, Sheets, Calendar, Linear, GitHub, Notion).
+- Built the **evaluation framework** (judge prompts and datasets) for the main agent and subagents, raising integration eval scores from **64% to 85%+** and catching regressions before release.
+- Built the meeting-notes backend: turned in-app meeting transcripts into cleanly formatted notes with speaker handling, and matched Google Calendar events to the meetings a user started so each note attached to the right meeting.
+- Drove Google's **CASA security certification** end to end — the review required for production access to users' Gmail, Drive, and Calendar data.
+- Added the reliability and observability behind it: usage and error telemetry with dashboards, plus handling for dropped connections and interrupted model streams.
+
+**🎵 Songbird — solo build (music recommendation)**
+
+- Designed and built the entire platform alone — data pipeline, infrastructure on Modal, and the recommendation modeling.
+- Modeled each user's taste from their listening history: enriched every track with LLM calls (Gemini with search grounding) and audio features, turned them into embeddings, then reduced dimensions two ways as Modal jobs — unsupervised (PCA) to visualize a library, and supervised (PLS) aligned to the user's own likes and dislikes.
+- Built a preference model that scores each song's appeal from ~100 pieces of feedback (hearts, thumbs, ranked comparisons), calibrated so its head-to-head predictions stay honest — refreshing as new ratings arrive and driving what gets recommended next.
+- Re-architected from Spotify-only to provider-agnostic, adding Apple Music behind the same interface.
+
+---
+
 ### 🛠️ **Software Engineer (Contract) – Docsum**
-*February 2025 – June 2025*
+*February 2025 – June 2025 · Bengaluru*
 
-- Engineered a scalable, Hatchet-based asynchronous task processing system, incorporating monitoring and audit capabilities to handle high-volume workloads efficiently.
-- Architected the external apps integration framework for integrating Google Drive, OneDrive and other such apps.
-- Built a system creating knowledge graphs to identify inter-document relationships using pgRouting and LLMs.
+- Built the async task system (an async-tasks table with a streaming status endpoint) powering bulk document operations — bulk archive and bulk reprocess — across high-volume workloads.
+- Built the document-relationship layer: new relationship tables plus a bulk endpoint that computes relationships across many documents at once, forming the backbone of the inter-document knowledge graph (pgRouting + LLMs).
+- Built the Google Drive integration (Paragon workflows) and file-sync APIs for bringing external documents in.
+- Hardened the FastAPI / SQLAlchemy backend: fixed dependency-injection and DB-session bugs, file-type detection, and persistence issues.
 
-**Tech Stack:** Python, FastAPI, Hatchet, Supabase
+**Tech Stack:** Python, FastAPI, SQLAlchemy, Hatchet, PostgreSQL
 
 ---
 
 ### 🧪 **Founder – Twing** ([https://trytwing.com](https://trytwing.com))
-*December 2022 – Present*
+*December 2022 – January 2025 · India*
 
-- **TwingBot**: AI-powered Slackbot for task management in Slack, saving 30+ mins/day, used by 200 people.  
-- **Legaling**: RAG-based legal research & case management platform using Azure Vector DB, OpenAI, and Azure Search.  
-- **TwingParse**: AI-powered system for template-based data extraction from diverse documents using OCR, language identification, and parsing algorithms.  
-- **TwingTranslate**: AI translation system for Indian languages. Handles scanned & digital docs via `textract`, `tesseract`, and `langdetect`.  
+Solo-founded an AI productivity startup; built and shipped four products.
 
-**Tech Stack:** Python, FastAPI, PostgreSQL, Celery, AWS, Azure, LangChain, LlamaIndex
+- **TwingBot**: AI Slack bot for task management; ~200 users, saving 30+ minutes a day.
+- **Legaling**: RAG-based legal research and case management (Azure Vector DB, OpenAI, Search Service).
+- **TwingParse**: Template-based extraction from varied documents using OCR and language detection.
+- **TwingTranslate**: Translation for Indian languages across scanned and digital documents.
 
----
-
-### 🚀 **Technical Lead – SalaryBox**
-*April 2022 – July 2022*
-
-- Reduced infrastructure/AWS costs by **30%**: Migrated to ARM servers, ran performance tests for rightsizing.
-- Led team of 10+ engineers, responsible for hiring & training.
-- Built scalable Notification Engine with real-time updates.
-- Integrated monitoring & test rerun tooling for improved system reliability.
-- Implemented request replay capabilities in test environments.
-
-**Tech Stack:** Python, Django, Redis, MySQL, AWS, Celery
+**Tech Stack:** Python, FastAPI, PostgreSQL, Celery, AWS, Azure, LlamaIndex, LangChain
 
 ---
 
+### 🚀 **Technical Lead – Salarybox**
+*April 2022 – July 2022 · Gurugram*
+
+- Built a real-time notification engine from scratch that scaled to **3,000 notifications/min** for thousands of simultaneous users, using Redis, queues, and batching over a dynamic rule set.
+- Cut latency from **30s to 1–2s** and DB locks from ~300 to 2–5 per day by fixing several problem processes; added monitoring and the ability to re-run requests in testing.
+- Cut AWS and infrastructure spend **~30%** by moving to ARM servers and rightsizing after performance tests.
+- Led and mentored a team of 6.
+
+**Tech Stack:** Python, Django, Redis, PostgreSQL, Celery, AWS
+
+---
 
 ### 💼 **Senior Software Engineer – Instawork**
 *October 2021 – April 2022*
 
-- Implemented fraud detection for tipping using average-user analysis.  
-- Developed multi-touchpoint tipping feature based on rating scores, increasing client tipping by **15%**.  
-- Built multiple platform features to increase user engagement.
-- Contributed to product discussions and roadmap planning.
+- Built the tipping feature (multiple touchpoints, rating-based calculation) that raised client tipping by up to **15%**.
+- Added fraud-detection checks that analyzed tipping behavior against expected parameters.
 
-**Tech Stack:** Python, Django, JavaScript, Django Templates
+**Tech Stack:** Python, Django, JavaScript
 
 ---
 
-### 📊 **Software Engineer – Quadeye Securities**
-*February 2017 – December 2020*
+### 📊 **Software Developer – Quadeye Securities**
+*February 2017 – December 2020 · Gurgaon*
 
-- Built real-time trading interface: Visualized up to **3000 datapoints/sec** with alerting & command interface.
-- Improved event handling throughput from **5K → 1M events/day**.  
-- Leveraged WebSockets, Redis, async queues, and heavy caching for performance optimization.
-- Developed rich visual trading platforms and real-time trade analysis tools.
-- Created automation tools to reduce manual tasks and improve trader efficiency.
+- Architected a low-latency trading-visualization app handling up to **3,000 data points/second**, with live alerts and commands into trading strategies.
+- Drove ~5x throughput gains — websockets, Redis caching, and queue-based offloading — taking capacity from **5k to 1M events/day**.
+- Helped hire and manage a team of 10+.
 
-**Tech Stack:** Python, Django, Redis, MySQL, HTML5, CSS3, jQuery, AWS, Celery
+**Tech Stack:** Python, Django, jQuery, JavaScript, MySQL, Redis
 
 ---
 
-### 💻 **Software Engineer – Ishi Systems Inc.**
-*December 2015 – January 2017*
+### 💻 **Software Developer – Ishi Systems**
+*December 2015 – January 2017 · Ahmedabad*
 
-- Worked on image/video processing with Intel Media SDK and Golang.  
-- Implemented ONVIF-compliant features for security camera systems.
-- Wrote production-grade backend and frontend code.
-- Handled CI/CD and multi-server deployment processes.
+- Built on-the-fly video processing (Intel Media SDK, Go), made systems ONVIF-compliant, and worked full-stack across Python / Django and AngularJS.
 
-**Tech Stack:** Python (Django), AngularJS, MySQL, NodeJS, TypeScript, Golang, C
+---
+
+## 🧩 Projects
+
+### 📜 **Clausewize** ([clausewize.app](https://clausewize.app) · solo)
+
+A Chrome extension that turns terms-of-service and privacy pages (and PDFs) into a plain risk brief: a verdict, severity-rated clauses, and the exact clause each flag came from. Bring-your-own-key across OpenAI, Anthropic, and Gemini; privacy-first (stores no raw documents); with an account tier for synced history and shareable briefs. Live on the Chrome Web Store.
+
+### 🔔 **Pushbridge** ([GitHub](https://github.com/manish001in/pushbridge) · open source, 18★)
+
+A Manifest V3 Chrome extension that rebuilds core Pushbullet features (notification mirroring, SMS/MMS, push and file sync) on the official REST and WebSocket APIs. TypeScript + Lit, unit and end-to-end tested, 12 releases. The hard part: keeping a live WebSocket sync working under MV3's short-lived service worker.
 
 ---
 
 ## 🧠 Technical Skill Set
 
-### 💻 Programming Languages  
-Python, JavaScript/NodeJS, Go
+### 💻 Languages  
+Python, JavaScript / TypeScript, Go
 
-### ⚙️ Frameworks  
-Django, Flask, FastAPI, jQuery, React
+### ⚙️ Backend  
+Django, FastAPI, Flask, Node.js
 
-### 🛢️ Databases & Caching  
-MySQL, PostgreSQL, Redis, Supabase
+### 🧠 AI / LLM  
+Tool-calling agents, evals, embeddings & retrieval, RAG · OpenAI, Anthropic, Gemini · LlamaIndex, LangGraph
 
-### ☁️ DevOps / Cloud / CI-CD  
-EC2, ECS, S3, Lambda, RDS, ELB, Azure VM, Azure Blob, Docker, GitHub CI
-
-### 🧠 AI / LLM Toolkit  
-GPT, Claude, Llama, Azure Vector DB, LangGraph, LlamaIndex
-
-### 🛠️ Tools  
-Cursor, Vercel, Render, PostHog
-
----
-
-## 🔑 Key Areas of Expertise
-
-- **Data Structures and Algorithms** - Strong foundation in computer science fundamentals
-- **Distributed Systems & REST APIs** - Scalable system architecture and design  
-- **Backend System Development** - End-to-end backend development and optimization
-- **AI System Architecture** - Modern AI/ML system design and implementation
-- **DevOps and Cloud Engineering** - Infrastructure automation and cloud deployment
+### ☁️ Data & Infra  
+PostgreSQL, MySQL, Redis, Supabase · AWS (EC2, ECS, S3, Lambda, RDS), Modal, Docker, GitHub CI
 
 ---
 
@@ -134,4 +144,4 @@ Bachelor of Technology (B.Tech) – Information Technology
 
 ---
 
-*Last updated: July 2025* 
+*Last updated: July 2026*
